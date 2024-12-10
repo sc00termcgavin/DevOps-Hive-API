@@ -41,7 +41,7 @@ senseBox IDs:
   - [x] Run the app container and make sure it returns the correct value. 
 
 **Phase 3**
-- [ ] Code:
+- [x] Code:
   - [x] Version Endpoint: `/version`
     - [x] Returns the version of the deployed app.
   - [x] Temperature Endpoint: `/temperature`

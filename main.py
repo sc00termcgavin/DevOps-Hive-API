@@ -8,7 +8,7 @@ app = FastAPI()
 # Version Endpoint
 @app.get("/version")
 async def get_version():
-    version = version = "v0.1.0"
+    version = version = "v0.0.1"
     return {"version": version}
 
 
