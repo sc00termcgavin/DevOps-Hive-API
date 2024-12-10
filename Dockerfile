@@ -2,6 +2,11 @@ FROM python:latest
 
 WORKDIR /app
 
-COPY main.py /app
+# Copy the requirements.txt first to take advantage of Docker's cache
+COPY requirements.txt main.py /app/
 
-CMD ["python", "main.py"]
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+EXPOSE 80
+
+CMD ["fastapi", "run", "main.py", "--port", "80"]

@@ -55,6 +55,7 @@ senseBox IDs:
   - [ ] Setup OpenSSF Scorecard GitHub Action and fix any issues reported by it.
 - [ ] Test
   - [ ] In the CI pipeline, call the /version endpoint and ensure that it returns the correct value.
+- [x] [Docker Best Practices](https://tech.aabouzaid.com/2021/09/docker-best-practices-workshop-presentation.html)
 
 ### Tools
 
