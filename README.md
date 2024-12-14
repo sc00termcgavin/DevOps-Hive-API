@@ -47,7 +47,7 @@ senseBox IDs:
   - [x] Temperature Endpoint: `/temperature`
     - [x] Return current average temperature based on all senseBox data.
     - [x] Ensure that the data is no older 1 hour.
-- [ ] Continuous Integration
+- [x] Continuous Integration
   - [x] Create a GitHub Actions workflow for CI.
   - [x] Add step to lint code and Dockerfile.
   - [x] Add step to build the Docker image.
@@ -55,6 +55,7 @@ senseBox IDs:
   - [x] Setup OpenSSF Scorecard GitHub Action and fix any issues reported by it.
 - [x] Test
   - [x] In the CI pipeline, call the /version endpoint and ensure that it returns the correct value.
+  - ![alt text](img/CIendpoint.png)
 - [x] [Docker Best Practices](https://tech.aabouzaid.com/2021/09/docker-best-practices-workshop-presentation.html)
 
 ### Tools
