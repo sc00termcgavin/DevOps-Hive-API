@@ -89,4 +89,27 @@ jobs:
         context: .
         push: true
         tags: sc00termcgavin/devops-hive-api:${{ github.sha }}
-    
+
+  test_version_endpoint:
+    needs: build_image
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker
+      run: |
+        docker pull sc00termcgavin/devops-hive-api:${{ github.sha }}
+        docker run -d -p 8000:80 sc00termcgavin/devops-hive-api:${{ github.sha }}
+        sleep 10 # Wait for FastAPI app to start
+
+    - name: Test /version endpoint
+      run: |
+        response=$(curl --write-out "%{http_code}" --silent --output /dev/null http://localhost:8000/version)
+        if [ "$response" -eq 200 ]; then
+          echo "API version endpoint is working"
+        else
+          echo "Failed to call version endpoint, status code: $response"
+          exit 1
+        fi
